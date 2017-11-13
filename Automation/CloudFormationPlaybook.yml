@@ -1,0 +1,22 @@
+---
+
+- name: Run CloudFormation
+  hosts: "localhost"
+  connection: "local"
+  gather_facts: false
+
+  tasks:
+  - name: launch ansible cloudformation template
+    cloudformation:
+      stack_name: "Transformers1"
+      state: "present"
+      region: "us-east-1"
+      disable_rollback: true
+      template: "autobots.json"
+      template_parameters:
+        DBPassword: "NoDeceptic0ns"
+        DBUser: "OptimusPrime"
+        KeyName: "autobots"
+        Subnets: "subnet-3c892210,subnet-e9dcbaa1"
+      tags:
+        Stack: "AgeOfExtinction"
