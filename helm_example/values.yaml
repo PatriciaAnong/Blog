@@ -1,0 +1,17 @@
+replicaCount: 1
+helm_example:
+  name: "helm-example"
+  namespace: "helm-example"
+  image_pull_policy: "IfNotPresent"
+  SSL_REDIRECT: "true"
+  region: "us-east-1"
+  logging: "3"
+  image:
+      repository: jenkins/jenkins
+      tag: lts
+      pullPolicy: IfNotPresent
+  service:
+      name: helm-example
+      type: LoadBalancer
+      externalPort: 80
+      internalPort: 8080

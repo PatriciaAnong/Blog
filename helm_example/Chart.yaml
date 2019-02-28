@@ -1,0 +1,8 @@
+apiVersion: v1
+description: A Helm chart example for Patricia Anong's Blog
+name: helm_example
+version: 0.1.0
+maintainers:
+  - name: Patricia.Anong
+    email: PatriciaAnong@gmail.com
+    url: patricia-anong.com

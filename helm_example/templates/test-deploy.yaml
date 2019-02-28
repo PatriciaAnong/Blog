@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.helm_example.name }}-deployment
+  namespace: {{ .Values.helm_example.namespace }}
+spec:
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  revisionHistoryLimit: 1
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.helm_example.name }} 
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.helm_example.name }} 
+    spec:
+      containers:
+      - name: {{ .Values.helm_example.name }} 
+        image:  {{ .Values.helm_example.image.repository }} 
+        imagePullPolicy: {{ .Values.helm_example.image.pullPolicy }}
+        envFrom:
+        - configMapRef:
+            name: configmap
+        ports:
+        - containerPort: {{ .Values.helm_example.service.internalPort }} 
+          protocol: TCP
+          name: http

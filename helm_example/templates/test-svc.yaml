@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: {{ .Values.helm_example.service.name }}-service
+  namespace: {{ .Values.helm_example.namespace }}
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-backend-protocol: tcp
+spec:
+  type: {{ .Values.helm_example.service.type }} 
+  ports:
+  - name: http
+    port: {{ .Values.helm_example.service.externalPort }}
+    targetPort: {{ .Values.helm_example.service.internalPort }}
+    protocol: TCP    
+  selector:
+    app: {{ .Values.helm_example.service.name }} 
+  externalTrafficPolicy: Local
+status:
+  loadBalancer: {}  
