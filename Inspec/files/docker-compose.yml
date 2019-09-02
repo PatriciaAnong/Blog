@@ -1,0 +1,53 @@
+version: '3.7'
+
+services:
+
+  inspec:
+    build:
+      context: .
+    image: inspec
+    container_name: inspec
+    ports:
+      - "80:80"
+    restart: unless-stopped
+    secrets:
+      - heimdall_key
+    volumes:
+      - "$HOME/Documents:/src"
+    environment:
+      - NGINX_PORT=80
+      - GOOGLE_APPLICATION_CREDENTIALS=/home/root/creds.json
+      - CHEF_LICENSE=accept-silent
+
+  db:
+    image: postgres:latest
+    container_name: heimdall_db
+    restart: unless-stopped
+    volumes:
+      - heimdall_dbdata:/var/lib/postgresql/data
+    expose:
+      - "5432"
+
+  web:
+    image: mitre/heimdall:latest
+    container_name: heimdall_server
+    environment:
+      DATABASE_URL: postgres://postgres@db/heimdall_postgres_production
+      RAILS_SERVE_STATIC_FILES: "true"
+      RAILS_ENV: production
+      HEIMDALL_RELATIVE_URL_ROOT: ""
+    env_file: .env-prod
+    restart: unless-stopped
+    command: /bin/sh -c "rm -f tmp/pids/server.pid && bundle exec rake assets:precompile && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - "db"
+      - "inspec"
+
+secrets:
+  heimdall_key:
+    file: secrets/heimdall_key
+
+volumes:
+  heimdall_dbdata:

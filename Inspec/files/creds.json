@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "inspecplaygroundgcp",
+  "private_key_id": "1379e80few2633hg632831912810he1578d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nYCp83aTGqX/bqkVtzReKohiUemJYebEGp6GoAuIm/qxY+y2nvYmSH2EZp0OCKyCZ\ndrSUUwtZ9FIPRt2jm9r/B6gzjOPysKUgXaDaLzy1sQKBgQD+Vev9ddkTfNr3d71S\nT1PlYVwrlL9IQQQ5XP6CvvBS6mQkg6E2NDS5GaMTw3LTz5/S1MTqLdkHOqlMd1nf\nTTTrrBYo8J0B5Q6XynRvIp4tiZqO3B+R7vzhLQ5YC2MUItp1EzmWRqaQ9i+wBY5G\n4Czsozkr1qvwZplGwncIfyYotsrV7dxgSGfn7QVFXgWjKJmyeGrVDBu+9a0gMTBJ\n/jHSO5K6njQJbguvz/gHi3Wv9NTQaQ/Z28EeZKXcsUynvazG1L6Vkymqx8nu3hzW\nRECo++Jf9wKBgQDXgh7RSkaCSM2R25hEYouIVhMvqn7azpyxrqbKStiAqbPpbM/x\nihMStTKF0Js/9zJKB5hDhk3b3k0OSiORH260M8EjN58St/DBlf9LHF5D39FjNApc\nMdF9TBxXZm6x5UaO5ZdqSrthIfoOgOapW4HKFDYIwk3DkavS+UfHFxc6QQKBgQCZ\na2ToK5PF7iSGMoO9670RJL/CVjS748ZEH9MZEU7zYYGOip0WY3/9hg55XUpLl3aS\nYU2VG+q1veNsmo2Ht7AEqPGnJPdjKms4au+FlNO0gWjGzggG4N5KtBb8KD9Mil0w\nhhjfcd2PfWAVxLmNQhy6RhJZifay56RRscn8m6TwwQKBgQDujJexyK/mxBEmiNZb\nTKEX2clz/OMA1TEg4MQLgXltgZlBSWE4qWV5N87IhYLXzEWgXqLINIqnz9C+ARrk\nwa9ghPkD9puTatZB0qw/XwnTLdKIq6xVs1n2sTh5HCzXx7MIsX7ns2d//k+MLM7p\n077s8kZ8y6I3fp2qbWsWLp27bw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "patriciaanong@inspecplaygroundgcp.iam.gserviceaccount.com",
+  "client_id": "739724408343205350",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/patriciaanong%40inspecplaygroundgcp.iam.gserviceaccount.com"
+}

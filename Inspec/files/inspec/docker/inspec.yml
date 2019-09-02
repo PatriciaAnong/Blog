@@ -1,0 +1,17 @@
+name: PAnong-Docker-Inspec-Profile
+title: PAnong Sample Docker InSpec Profile
+maintainer: Patricia Anong
+copyright: Patricia Anong
+copyright_email: patriciaanong@gmail.com
+license: Apache-2.0
+summary: An InSpec Compliance Profile For Docker
+version: 0.1.0
+inspec_version: '>= 4.4.0'
+
+depends:
+  - name: docker-baseline
+    url: https://github.com/dev-sec/cis-docker-benchmark/archive/master.tar.gz
+
+supports:
+  - platform-name: debian
+  - platform-name: ubuntu
