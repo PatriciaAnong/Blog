@@ -1,2 +1,2 @@
 # Packaging Kubernetes Applications using Helm
-The corresponding blog post can be found at [Patricia-Anong.com/Blog](https://Patricia-Anong.com/Blog/2019/2/27/packaging-kubernetes-applications-using-helm)
+The corresponding blog post can be found at [Patricia-Anong.com/Blog](https://Patricia-Anong.com/blog/2019/2/27/packaging-kubernetes-applications-using-helm)
