@@ -1,0 +1,12 @@
+apiVersion: v2
+name: certs
+description: A Helm chart for deploying cert-manager
+
+type: application
+
+version: 0.1.0
+appVersion: 0.1.0
+
+maintainers:
+  - name: Patricia Anong
+    email: patricia@patricia-anong.com
