@@ -43,3 +43,4 @@ resource kubernetes_secret dns_sa_credentials {
   }
 
 }
+

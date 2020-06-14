@@ -7,9 +7,9 @@ locals {
   template_vars = {
     project = var.project,
 
-    env     = var.environment,
+    env = var.environment,
 
-    name    = "letsencrypt-${var.environment}",
+    name = "letsencrypt-${var.environment}",
 
     email = "devops@patricia-anong.com",
 
