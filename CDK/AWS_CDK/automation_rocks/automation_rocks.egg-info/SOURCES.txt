@@ -1,0 +1,7 @@
+README.md
+setup.py
+automation_rocks/automation_rocks.egg-info/PKG-INFO
+automation_rocks/automation_rocks.egg-info/SOURCES.txt
+automation_rocks/automation_rocks.egg-info/dependency_links.txt
+automation_rocks/automation_rocks.egg-info/requires.txt
+automation_rocks/automation_rocks.egg-info/top_level.txt
