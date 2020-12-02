@@ -7,9 +7,9 @@ resource helm_release wp {
   chart      = "wordpress"
 
   cleanup_on_fail = true
-  force_update = true
-  recreate_pods = false
-  reset_values = true
+  force_update    = true
+  recreate_pods   = false
+  reset_values    = true
 
   set {
     name  = "service.type"
@@ -59,7 +59,7 @@ resource kubernetes_ingress ingress {
     }
 
     tls {
-      hosts = [ "${helm_release.wp[count.index].metadata[0].name}-${var.environment}.com" ]
+      hosts = ["${helm_release.wp[count.index].metadata[0].name}-${var.environment}.com"]
 
       secret_name = "${helm_release.wp[count.index].metadata[0].name}-${var.environment}-ssl-cert"
     }

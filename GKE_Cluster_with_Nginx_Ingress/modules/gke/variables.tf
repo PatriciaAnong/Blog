@@ -48,3 +48,8 @@ variable tags {
   description = "Tags to be applied to the deployed resources"
   type        = list(string)
 }
+
+variable enable_apis {
+  description = "APIs to enable for GCP project"
+  type        = map(string)
+}

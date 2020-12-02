@@ -1,12 +1,28 @@
 resource google_project_service project {
+  for_each = terraform.workspace != "default" ? var.enable_apis : {}
   project = var.project
-  service = "container.googleapis.com"
+  service = each.value
 
   disable_dependent_services = true
 }
 
+// Wait for the API to be enabled before proceeding
+resource null_resource wait {
+  count = terraform.workspace != "default" ? 1 : 0
+
+  depends_on = [
+    var.enable_apis
+  ]
+
+  provisioner local-exec {
+    command = "sleep 90"
+  }
+
+}
+
 resource google_container_cluster k8s {
   count = terraform.workspace != "default" ? 1 : 0
+  depends_on = [ google_project_service.project ]
 
   name     = local.gke_name
   location = var.region
@@ -69,8 +85,8 @@ resource google_container_node_pool node_pool {
   }
 
   node_config {
-    image_type        = "COS"
-    machine_type      = "n1-standard-1"
+    image_type   = "COS"
+    machine_type = "n1-standard-1"
 
     metadata = {
       disable-legacy-endpoints = "true"
